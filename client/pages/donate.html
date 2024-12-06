@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your CSS -->
+    <script src="js/donate.js" defer></script> <!-- Link to your JavaScript -->
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="resources.html">Resources</a>
+            <a href="members.html">Members</a>
+            <a href="events.html">Events</a>
+            <a href="donate.html" class="active">Donate</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="donate-section">
+            <h1>Support Our Chess Club</h1>
+            <p>Your contributions help us promote chess and organize events. Choose your preferred payment method below:</p>
+
+            <!-- Tabs for payment options -->
+            <div class="payment-methods">
+                <button class="tab-button active" data-tab="paypal-tab">PayPal</button>
+                <button class="tab-button" data-tab="mpesa-tab">M-Pesa</button>
+                <button class="tab-button" data-tab="other-tab">Other Methods</button>
+            </div>
+
+            <!-- PayPal Section -->
+            <div class="tab-content active" id="paypal-tab">
+                <form action="https://www.paypal.com/donate" method="post" target="_blank">
+                    <label for="paypal-amount">Donation Amount (USD):</label>
+                    <input type="number" id="paypal-amount" name="amount" placeholder="Enter amount" required>
+                    <button type="submit">Donate via PayPal</button>
+                </form>
+            </div>
+
+            <!-- M-Pesa Section -->
+            <div class="tab-content" id="mpesa-tab">
+                <h2>Donate via M-Pesa</h2>
+                <p>Follow the steps below:</p>
+                <ol>
+                    <li>Go to your M-Pesa menu.</li>
+                    <li>Select *Pay Bill*.</li>
+                    <li>Enter the business number: <strong>123456</strong>.</li>
+                    <li>Enter the account number: <strong>ChessMoreClub</strong>.</li>
+                    <li>Enter the donation amount and complete the payment.</li>
+                </ol>
+                <p>After payment, please fill out this confirmation form:</p>
+                <form id="mpesa-confirmation-form">
+                    <label for="mpesa-name">Name:</label>
+                    <input type="text" id="mpesa-name" name="name" required>
+                    
+                    <label for="mpesa-phone">Phone Number:</label>
+                    <input type="tel" id="mpesa-phone" name="phone" required>
+                    
+                    <label for="mpesa-transaction-id">Transaction ID:</label>
+                    <input type="text" id="mpesa-transaction-id" name="transaction-id" required>
+                    
+                    <button type="submit">Submit Confirmation</button>
+                </form>
+            </div>
+            <div id="mpesa-tab" class="tab-content">
+                <h2>Donate via M-Pesa</h2>
+                <form id="mpesa-form">
+                    <label for="mpesa-phone">Phone Number:</label>
+                    <input type="tel" id="mpesa-phone" name="phone" placeholder="e.g. 254712345678" required>
+                    
+                    <label for="mpesa-amount">Donation Amount (KES):</label>
+                    <input type="number" id="mpesa-amount" name="amount" placeholder="Enter amount" required>
+                    
+                    <button type="submit">Pay via M-Pesa</button>
+                </form>
+                <div id="mpesa-response"></div>
+            </div>
+            
+
+            <!-- Other Methods Section -->
+            <div class="tab-content" id="other-tab">
+                <h2>Other Payment Methods</h2>
+                <p>Contact us at <a href="mailto:donations@chessMoreclub.com">donations@chessclub.com</a> for bank transfers or other payment options.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ChessMore Club</p>
+    </footer>
+</body>
+</html>

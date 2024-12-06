@@ -1,0 +1,23 @@
+[
+    {
+        "name": "John Doe",
+        "rank": 1,
+        "title": "Grandmaster",
+        "bio": "John is a seasoned chess player with numerous championships under his belt.",
+        "photo": "images/john.jpg"
+    },
+    {
+        "name": "Jane Smith",
+        "rank": 2,
+        "title": "Candidate Master",
+        "bio": "Jane is an aspiring master known for her strategic plays.",
+        "photo": "images/jane.jpg"
+    },
+    {
+        "name": "Chris Lee",
+        "rank": 3,
+        "title": "FIDE Master",
+        "bio": "Chris excels in tactical games and rapid chess formats.",
+        "photo": "images/chris.jpg"
+    }
+]

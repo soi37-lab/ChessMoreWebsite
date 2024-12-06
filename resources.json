@@ -1,0 +1,18 @@
+{
+    "learningMaterials": [
+        {"name": "Beginner Tutorials", "url": "https://example.com/tutorial1"},
+        {"name": "Advanced Strategies", "url": "https://example.com/advanced-tutorials"}
+    ],
+    "puzzles": [
+        {"name": "Puzzle 1", "url": "https://example.com/puzzle1"},
+        {"name": "Puzzle 2", "url": "https://example.com/puzzle2"}
+    ],
+    "externalResources": [
+        {"name": "Telegram Group", "url": "https://t.me/chessgroup"},
+        {"name": "YouTube Tutorials", "url": "https://youtube.com/chesschannel"}
+    ],
+    "articles": [
+        {"name": "Chess Guide (PDF)", "url": "downloads/chess_guide.pdf"},
+        {"name": "Advanced Tactics (PDF)", "url": "downloads/advanced_tactics.pdf"}
+    ]
+}
