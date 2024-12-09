@@ -626,6 +626,53 @@ main {
 .product-card button:hover {
     background-color: #0056b3;
 }
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8; /* Optional: Add a background color for the header */
+}
+
+nav {
+    position: relative;
+}
+
+.home-link {
+    text-decoration: none;
+    color: #007BFF;
+    font-size: 16px;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+#analysis-visualization {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#chessboard-visualization {
+    margin: 0 auto;
+}
+
+#move-controls button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#move-controls button:hover {
+    background-color: #0056b3;
+}
 
 
 

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Analysis</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="../css/chessboard.css">
+<script src="../js/chessboard.js"></script>
+<script src="../js/chess.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/chessboardjs/dist/chessboard-1.0.0.min.css">
+<script src="https://unpkg.com/chessboardjs/dist/chessboard-1.0.0.min.js"></script>
+<script src="https://unpkg.com/chess.js/chess.min.js"></script>
+
+
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Navigation link to the home page -->
+            <a href="../index.html" class="home-link">Home</a>
+        </nav>
+        <h1>Game Analysis</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Choose How to Input Your Game</h2>
+            <div id="input-methods">
+                <!-- Tabs for the different input methods -->
+                <button class="tab-button" onclick="showInputSection('pgn-input-section')">Upload PGN</button>
+                <button class="tab-button" onclick="showInputSection('board-setup-section')">Manual Board Setup</button>
+                <button class="tab-button" onclick="showInputSection('lichess-import-section')">Import from Lichess</button>
+            </div>
+        </section>
+
+        <!-- PGN Upload Section -->
+        <section id="pgn-input-section" class="input-section">
+            <h2>Upload Your Game (PGN)</h2>
+            <form id="game-upload-form">
+                <label for="pgn-input">Paste PGN:</label>
+                <textarea id="pgn-input" name="pgn" rows="6" cols="50" placeholder="Paste your PGN here..."></textarea>
+                <br>
+                <label for="file-upload">Or Upload PGN File:</label>
+                <input type="file" id="file-upload" name="file" accept=".pgn">
+                <br>
+                <button type="submit">Analyze</button>
+            </form>
+        </section>
+
+        <!-- Manual Board Setup Section -->
+        <section id="board-setup-section" class="input-section" style="display: none;">
+            <h2>Manual Board Setup</h2>
+            <div id="chessboard-setup">
+                <!-- Placeholder for an interactive chessboard setup tool -->
+                <p>Set up your board manually here. (Interactive board setup functionality to be added)</p>
+            </div>
+            <button id="board-setup-submit">Analyze</button>
+        </section>
+
+        <!-- Lichess Import Section -->
+        <section id="lichess-import-section" class="input-section" style="display: none;">
+            <h2>Import Games from Lichess</h2>
+            <form id="lichess-import-form">
+                <label for="lichess-username">Enter Lichess Username:</label>
+                <input type="text" id="lichess-username" name="lichess-username" placeholder="Your Lichess username">
+                <br>
+                <label for="game-id">Game ID (optional):</label>
+                <input type="text" id="game-id" name="game-id" placeholder="Enter a specific game ID">
+                <br>
+                <button type="submit">Fetch and Analyze</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Analysis Results</h2>
+            <div id="analysis-results">
+                <!-- The analysis results will be displayed here -->
+                <p>No analysis yet. Upload or input a game to see results.</p>
+            </div>
+        </section>
+        <section>
+            <h2>Chessboard</h2>
+            <div id="chessboard">
+                <!-- Visual feedback of the game will be displayed here -->
+                <p>The chessboard visualization will appear here.</p>
+                <section id="analysis-visualization">
+                    <h2>Game Visualization</h2>
+                    <div id="chessboard-visualization" style="width: 400px; margin: auto;"></div>
+                    <div id="move-controls" style="text-align: center; margin-top: 10px;">
+                        <button id="prev-move">Previous Move</button>
+                        <button id="next-move">Next Move</button>
+                    </div>
+                </section>
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // JavaScript to handle switching between input sections
+        function showInputSection(sectionId) {
+            const sections = document.querySelectorAll('.input-section');
+            sections.forEach(section => section.style.display = 'none');
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+    <script>
+        async function analyzeGame(inputPgn) {
+            try {
+                const response = await fetch('/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ pgn: inputPgn })
+                });
+    
+                if (!response.ok) {
+                    throw new Error('Analysis failed!');
+                }
+    
+                const data = await response.json();
+                const analyzedPgn = data.analyzedPgn; // Replace with your API response key
+                loadMoves(analyzedPgn); // Pass the analyzed PGN to visualization
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+    </script>
+    
+</body>
+</html>
