@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;   
+}
+
+:root {
+    --primary-color: #eebf17;
+    --light-color: #f4f4f6;
+    --dark-color: #111;
+    --green-color: #00a652;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Navbar */
+.about-navbar {
+    background: #fff;
+    padding: 20px;
+}
+
+.about-navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.about-navbar .main-menu ul {
+    display: flex;
+}
+
+.about-navbar ul li a {
+    padding: 10px 20px;
+    display: block;
+    font-weight: 600;
+    transition: 0.5s;
+}
+
+.about-navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.about-navbar ul li a i {
+    margin-right: 10px;
+} 
+
+.about-navbar ul li:last-child a {
+    margin-left: 10px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #eebf17;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.about-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-boxes .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-boxes .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box {
+    flex: 1;
+    background: #fff;
+    color: #333;
+    margin: 20px 10px;
+    padding: 15px 20px;
+}
+
+.goals .container {
+    flex: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.history .container {
+    flex: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* FAQ */
+.faq {
+    padding: 40px 0;
+}
+.faq .faq-group {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.faq .faq-group .faq-group-header {
+    padding: 20px 0;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.faq .faq-group .faq-group-header h4 {
+    font-weight: 600;
+    width: 90%; 
+}
+
+.faq .faq-group .faq-group-header i {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.faq .faq-group .faq-group-body {
+    display: none;
+}
+
+.faq .faq-group .faq-group-body.open {
+    display: block;
+}
+
+.faq ul.faq-menu {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ddd;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.faq ul.faq-menu li {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.faq ul.faq-menu li.active {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.container-sm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Text Classes*/
+.text-xxl {
+    font-size: 3rem;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 40px 0 20px;
+}
+
+.text-xl {
+    font-size: 2.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 40px 0 20px;
+}
+
+.text-lg {
+    font-size: 1.8rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 30px 0 20px;
+}
+
+.text-md {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 20px 0 10px;
+}
+
+.text-sm {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-weight: normal;
+    margin: 10px 0 5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Background */
+.bg-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.bg-light {
+    background: var(--light-color);
+    color: #333;
+}
+
+.bg-dark {
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.bg-black {
+    background: #000;
+    color: #fff;
+}
+
+@media(max-width: 768px) {
+    .about-header .container {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+    }
+
+    .about-boxes .container {
+        display: block;
+        text-align: center;
+    }
+}
